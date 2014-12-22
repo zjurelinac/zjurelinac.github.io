@@ -5,7 +5,7 @@
 
 @accent :   #009AC4;
 @accent2:   #FF3E42;
-@accent3:   #89E600;
+@accent3:   #bbec12;
 @accent4:   #7600E3;
 
 body{
@@ -16,7 +16,7 @@ body{
     line-height     :   18px;
 }
 
-div, section, article, nav, ul, li, aside{
+div, section, article, nav, ul, li, aside, header{
     box-sizing      :   border-box;
 }
 
@@ -67,6 +67,10 @@ b{
     font-weight     :   700;
 }
 
+em{
+    font-style      :   italic;
+}
+
 a[ href ]{
     color           :   @accent2;
     font-weight     :   700;
@@ -78,7 +82,8 @@ a[ href ]{
 }
 
 .main-header{
-    background      :   @accent;
+    background      :   url( "../img/bg.png" ) no-repeat center center;
+    background-size :   cover;
     color           :   #d5d5d5;
     min-height      :   100vh;
     width           :   100%;
@@ -129,7 +134,7 @@ a[ href ]{
 }
 
 .home-section{
-    padding             :   48px 144px;
+    padding             :   72px 144px;
     text-align          :   center;
 
     h2{
@@ -139,7 +144,7 @@ a[ href ]{
 }
 
 .page-section{
-    min-height              :   100vh;
+    border-bottom       :   1px solid #eee;
 
     &:nth-child( 2n+1 ){
         background          :   #f5f5f5;
@@ -150,73 +155,92 @@ a[ href ]{
     margin-bottom       :   48px;
 }
 
-#bio .content-center{
-    border-left         :   8px solid @accent2;
-    padding-bottom      :   24px;
-}
+#bio{
 
-.bio-item{
-    border-bottom       :   1px solid #eee;
-    margin              :   0 240px;
-    padding-top         :   24px;
-    position            :   relative;
-    text-align          :   center;
-
-    img{
-        display             :   block;
-        margin              :   0 auto;
-        margin-bottom       :   6px;
-        opacity             :   0.7;
+    .content-center{
+        border-left         :   6px solid @accent2;
+        margin-left         :   12px;
+        margin-top          :   -24px;
+        padding-top         :   24px;
     }
 
-    p{
-        color               :   #555;
-        font-size           :   16px;
-        margin-bottom       :   24px;
+    .item-group{
+        .grid();
+        padding             :   0 0 24px 240px;
+        position            :   relative;
     }
 
-    .year{
-        background          :   #fafafa;
+    .group-info{
+        .column( 1, 2 );
         border              :   1px solid #eee;
-        border-left         :   none;
-        font-size           :   15px;
-        font-weight         :   700;
+        font-size           :   16px;
         line-height         :   24px;
-        padding             :   12px 36px;
-        position            :   absolute;
-        left                :   -240px;
-        top                 :   12px;
+        padding             :   24px 48px;
+        text-align          :   center;
+    }
 
-        &:after{
-            background          :   #fff;
-            border              :   4px solid @accent2;
+    .item-group.active .group-info{
+        background          :   @accent4;
+        border              :   none;
+        font-size           :   18px;
+
+        p{
+            color               :   #fff;
+        }
+
+        img{
+            margin              :   6px;
+        }
+    }
+
+    aside{
+        background          :   #fafafa;
+        border              :   1px solid #ddd;
+        color               :   #555;
+        font-size           :   14px;
+        font-weight         :   700;
+        left                :   12px;
+        line-height         :   24px;
+        padding             :   6px 24px;
+        position            :   absolute;
+        top                 :   4px;
+
+        &:before{
+            background          :   @accent2;
             border-radius       :   12px;
             box-sizing          :   border-box;
             content             :   " ";
             display             :   block;
-            height              :   24px;
+            height              :   18px;
+            left                :   -25px;
             position            :   absolute;
-            left                :   -16px;
-            top                 :   12px;
-            width               :   24px;
-        }
-
-        &.last{
-            &:after{
-                background          :   @accent2;
-            }
+            top                 :   9px;
+            width               :   18px;
         }
     }
 
-    &.active{
-        background          :   @accent4;
+    .group-extra{
+        .column( 1, 2 );
+        padding-left        :   48px;
+        padding-top         :   6px;
 
-        p{
-            color               :   #fff;
-            font-size           :   18px;
+        li{
+            color               :   #777;
+            font-size           :   15px;
+            line-height         :   24px;
+            list-style-type     :   disc;
+            list-style-position :   inside;
+            padding             :   6px 0;
+        }
+
+        h4{
+            font-size       :   18px;
+            font-weight     :   700;
+            line-height     :   36px;
         }
     }
 }
+
 
 .further{
     padding             :   48px 0;
@@ -235,7 +259,7 @@ a[ href ]{
 .inproject{
     background          :   #fff;
     border              :   1px solid #eaeaea;
-    height              :   240px;
+    height              :   264px;
     margin              :   0 24px;
     padding             :   24px;
 }
@@ -251,13 +275,12 @@ a[ href ]{
 
 .project-side{
     .column( 1, 4 );
-    //background          :   @accent4;
     height              :   120px;
 }
 
 .project-info{
     .column( 3, 4 );
-    padding-left        :   24px;
+    padding-left    :   24px;
 
     p{
         color           :   #555;
@@ -265,6 +288,85 @@ a[ href ]{
         line-height     :   24px;
         margin-right    :   24px;
     }
+}
+
+.project-link{
+    clear           :   both;
+    display         :   block;
+    float           :   right;
+    font-size       :   15px;
+    margin-right    :   24px;
+    margin-top      :   12px;
+
+    &:before{
+        content         :   "\2192";
+        margin-right    :   4px;
+    }
+
+    &.unoperational{
+        color           :   #bbb;
+    }
+}
+
+.contact-grid{
+    .grid();
+    margin-top      :   -48px;
+}
+
+.contact-item{
+    .column( 2, 6 );
+
+    margin          :   48px 0;
+    padding         :   0 24px;
+}
+
+.small-item{
+    .column( 1, 6 );
+}
+
+.contact-inside{
+    background      :   @accent3;
+    height          :   152px;
+
+    img{
+        display         :   block;
+        float           :   left;
+        padding         :   8px 12px;
+    }
+}
+
+.contacts-list{
+    float           :   left;
+    padding         :   44px 0;
+
+    li{
+        color           :   #fff;
+        font-size       :   16px;
+        font-weight     :   700;
+        padding         :   6px 0;
+    }
+}
+
+.facebook-item{
+    background      :   #195fad;
+}
+
+.gplus-item{
+    background      :   #d34231;
+}
+
+.linkedin-item{
+    background      :   #017fb2;
+}
+
+.github-item{
+    background      :   #36373b;
+}
+
+.email-item img{
+    padding         :   28px 8px;
+    padding-right   :   4px;
+    width           :   96px;
 }
 
 .main-footer{

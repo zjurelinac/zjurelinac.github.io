@@ -4,6 +4,58 @@
 		"selected_items":
 		[
 			[
+				"lis",
+				"list-style-position"
+			],
+			[
+				"pad",
+				"padding-left"
+			],
+			[
+				"li",
+				"line-height"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"bor",
+				"border"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"te",
+				"text-align"
+			],
+			[
+				"border",
+				"border-box"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"content",
+				"content-center"
+			],
+			[
 				"mar",
 				"margin-right"
 			],
@@ -12,20 +64,12 @@
 				"project-content"
 			],
 			[
-				"font",
-				"font-size"
-			],
-			[
 				"backg",
 				"background"
 			],
 			[
 				"text",
 				"text-align"
-			],
-			[
-				"border",
-				"border-bottom"
 			],
 			[
 				"padding",
@@ -184,16 +228,8 @@
 				"accumulateWords"
 			],
 			[
-				"font-",
-				"font-weight"
-			],
-			[
 				"counter",
 				"counter-increment"
-			],
-			[
-				"tex",
-				"text-transform"
 			],
 			[
 				"border-bottom",
@@ -224,14 +260,6 @@
 				"dark-foreground"
 			],
 			[
-				"bor",
-				"border-left"
-			],
-			[
-				"back",
-				"background-size"
-			],
-			[
 				"backgro",
 				"background-image"
 			],
@@ -254,10 +282,6 @@
 			[
 				"l",
 				"list-rich-8x.png	w:64 h:64"
-			],
-			[
-				"te",
-				"text-transform"
 			],
 			[
 				"fo",
@@ -444,10 +468,6 @@
 				"project-phase-tasks"
 			],
 			[
-				"lis",
-				"list-style-position"
-			],
-			[
 				"list-style",
 				"list-style-type"
 			],
@@ -494,44 +514,24 @@
 			[
 				"GPIOLE",
 				"GPIOLED_DATA"
-			],
-			[
-				"GPIO",
-				"GPIOSW_CTRL"
-			],
-			[
-				"end",
-				"endCaptures	endCaptures:"
-			],
-			[
-				"e",
-				"Element"
-			],
-			[
-				"prin",
-				"printElem"
-			],
-			[
-				"read",
-				"readElem"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "index.html",
+			"file": "css/default.less",
 			"settings":
 			{
-				"buffer_size": 8750,
+				"buffer_size": 6348,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "css/default.less",
+			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 5557,
+				"buffer_size": 10048,
 				"line_ending": "Unix"
 			}
 		}
@@ -932,10 +932,10 @@
 	},
 	"file_history":
 	[
+		"/home/sigma/Web/Personal/index.html",
 		"/home/sigma/Web/Personal/css/default.less",
 		"/home/sigma/Programming/OS/Lab3/monitori.cpp",
 		"/home/sigma/Programming/OS/Lab3/semafori.cpp",
-		"/home/sigma/Web/Personal/index.html",
 		"/home/sigma/Programming/Haskell/Projects/Pljuska/Interpreter/Guillotine.hs",
 		"/home/sigma/Programming/Haskell/Projects/Pljuska/Hash.hs",
 		"/home/sigma/Programming/Haskell/Projects/Pljuska/Language/Definitions.hs",
@@ -1063,7 +1063,7 @@
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 58.0
 	},
 	"find_in_files":
 	{
@@ -1077,6 +1077,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			">\n",
 			"tP",
 			"tail",
 			"num",
@@ -1171,32 +1172,19 @@
 			[
 				{
 					"buffer": 0,
-					"file": "index.html",
+					"file": "css/default.less",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8750,
+						"buffer_size": 6348,
 						"regions":
 						{
-							"TagLint":
-							{
-								"flags": 2356,
-								"icon": "dot",
-								"regions":
-								[
-									[
-										1441,
-										1444
-									]
-								],
-								"scope": "variable.parameter"
-							}
 						},
 						"selection":
 						[
 							[
-								5840,
-								5840
+								4694,
+								4694
 							]
 						],
 						"settings":
@@ -1204,51 +1192,11 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -1258,15 +1206,54 @@
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
 							],
-							"is_xml": false,
-							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"syntax": "Packages/LESS/LESS.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1830.0,
+						"translation.y": 3762.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1274,19 +1261,19 @@
 				},
 				{
 					"buffer": 1,
-					"file": "css/default.less",
+					"file": "index.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5557,
+						"buffer_size": 10048,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								2594,
+								2624
 							]
 						],
 						"settings":
@@ -1294,51 +1281,11 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
@@ -1348,14 +1295,55 @@
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content"
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content"
 							],
-							"syntax": "Packages/LESS/LESS.tmLanguage",
+							"is_xml": false,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 969.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
