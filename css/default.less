@@ -124,11 +124,10 @@ a[ href ]{
         padding         :   0 12px;
 
         a{
-            color           :   inherit;
+            color           :   #eaeaea;
         }
 
         &:hover{
-            color           :   #eee;
             cursor          :   pointer;
         }
     }
@@ -309,81 +308,26 @@ a[ href ]{
     }
 }
 
-.interest-grid{
+.inside-grid{
     .grid();
     margin-top      :   -24px;
 }
 
-.interest-section{
+.inside-col{
     .column( 1, 2 );
-    border-right    :   1px solid #eee;
-    height          :   600px;
-    margin-bottom   :   24px;
+}
+
+.interest{
+    height          :   240px;
     padding         :   24px;
 
-    &:last-child{
-        border-right    :   none;
-    }
-}
-
-.interest-header{
-    background      :   @accent;
-    overflow        :   hidden;
-
-    img{
-        background      :   rgba( 0, 0, 0, 0.1 );
-        float           :   left;
-        opacity         :   0.9;
-        padding         :   12px;
-    }
     h3{
-        color           :   #fff;
-        float           :   left;
-        line-height     :   24px;
-        padding         :   24px 18px;
+        line-height     :   48px;
     }
-}
-
-.science-header{
-    background      :   @accent4;
-}
-
-.mathematics-header{
-    background      :   @accent2;
-}
-
-.interest-descr{
-    font-size       :   15px;
-    margin-top      :   24px;
 
     p{
-        color           :   #555;
+        font-size       :   15px;
         line-height     :   24px;
-        margin-bottom   :   12px;
-    }
-
-    ul{
-        border-left     :   4px solid @accent2;
-        //margin-left     :   4px;
-        padding-left    :   20px;
-    }
-
-    li{
-        color               :   #555;
-        line-height         :   24px;
-        list-style-type     :   disc;
-        list-style-position : inside;
-        margin              :   6px 0;
-
-        b{
-            color           :   #333;
-        }
-    }
-
-    h4{
-        font-weight     :   700;
-        margin-bottom   :   12px;
-        margin-top      :   24px;
     }
 }
 
