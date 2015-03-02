@@ -318,7 +318,7 @@ a[ href ]{
 }
 
 .interest{
-    height          :   240px;
+    height          :   360px;
     padding         :   24px;
 
     h3{
@@ -331,6 +331,32 @@ a[ href ]{
     }
 }
 
+.image-grid{
+    .grid();
+    padding         :   24px 0;
+}
+
+.image-wrapper{
+    .column( 1, 4 );
+    border          :   1px solid #ddd;
+    border-right    :   none;
+    padding         :   12px;
+
+    &:last-child{
+        border-right    :   1px solid #ddd;
+    }
+
+    img{
+        //background      :   #eee;
+        box-sizing      :   border-box;
+        padding         :   24px;
+        width           :   100%;
+
+        &.larger{
+            padding         :   12px;
+        }
+    }
+}
 
 .contact-grid{
     .grid();
