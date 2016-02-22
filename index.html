@@ -1,369 +1,414 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset = "UTF-8"/>
-    <title>Zvonimir Jurelinac &ndash; Personal Web</title>
-    <link rel = "stylesheet/less" href = "./css/default.less"/>
-    <script src = "./js/less.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Zvonimir Jurelinac &ndash; Personal web page</title>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Domine:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./css/default.css">
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>
+        $( document ).ready( function(){
+            var projectsStart = $( '#projects_section' ).offset().top;
+            var aboutStart = $( '#about_section' ).offset().top;
+            var contactsStart = $( '#contacts_section' ).offset().top;
+
+            var navLinks = $( '.c-primary-nav__item' );
+
+            var homeLink = $( '#home_link' );
+            var projectsLink = $( '#projects_link' );
+            var aboutLink = $( '#about_link' );
+            var contactsLink = $( '#contacts_link' );
+
+            console.log( [ projectsStart, aboutStart, contactsStart ] );
+
+            var getActiveSection = function(){
+                var fromTop = $( window ).scrollTop();
+
+                navLinks.removeClass( 'is-active' );
+
+                if( fromTop < projectsStart )
+                    homeLink.addClass( 'is-active' );
+                else if( fromTop < aboutStart )
+                    projectsLink.addClass( 'is-active' );
+                else if( fromTop < contactsStart )
+                    aboutLink.addClass( 'is-active' );
+                else
+                    contactsLink.addClass( 'is-active' );
+            }
+            $( window ).scroll( getActiveSection );
+        });
+    </script>
 </head>
 <body>
-    <header class = "main-header">
-        <div class = "header-top">
-            <div class = "content-wrapper">
-                <div class = "title">
-                    <h5>zvonimir jurelinac</h5>
-                </div>
-                <nav class = "top-nav">
-                    <ul>
-                        <li><a href = "#">Home</a></li>
-                        <li><a href = "#bio">Bio</a></li>
-                        <li><a href = "#projects">Projects</a></li>
-                        <li><a href = "#interests">Interests</a></li>
-                        <li><a href = "#contact">Contact</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </div>
-        <div class = "content-wrapper">
-            <div class = "home-section">
-                <h1>
-                    <span class = "first-line"><b>Hi, I'm Zvonimir,</b></span>
-                    a Computer Science student at <b>FER Zagreb</b>, and this is my personal web page.</h1>
-                <h2>Here you can find some of my projects, interests, a short bio and a way to contact me.</h2>
-            </div>
-        </div>
+    <header class="c-primary-header">
+        <div class="c-page-title">Zvonimir Jurelinac</div>
     </header>
-
-    <section class = "page-section" id = "bio">
-        <div class = "content-wrapper">
-            <header class = "section-header">
-                <h2>Short bio</h2>
-            </header>
-            <div class = "content-center">
-                <div class = "item-group">
-                    <aside>
-                        1994
-                    </aside>
-                    <header class = "group-info">
-                        <img src = "./img/32/birthday-32.png"/>
-                        <p>Born in <b>Zagreb</b>, Croatia</p>
-                    </header>
-                </div>
-                <div class = "item-group">
-                    <aside>
-                        2001&ndash;2008
-                    </aside>
-                    <header class = "group-info">
-                        <img src = "./img/32/class-32.png"/>
-                        <p>Went to Primary School <b>Mladost Zagreb</b></p>
-                    </header>
-                    <article class = "group-extra">
-                        <h4>Achievements</h4>
-                        <ul>
-                            <li><b>1<sup>st</sup> place</b> on <em>National Chemistry Competition</em></li>
-                            <li><b>2<sup>nd</sup> prize</b> on <em>National Physics Competition</em></li>
-                        </ul>
-                    </article>
-                </div>
-                <div class = "item-group">
-                    <aside>
-                        2009&ndash;2012
-                    </aside>
-                    <header class = "group-info">
-                        <img src = "./img/32/class-32.png"/>
-                        <p>Went to <b>XV. Gymnasium Zagreb</b></p>
-                    </header>
-                    <article class = "group-extra">
-                        <h4>Achievements</h4>
-                        <ul>
-                            <li><b>Silver</b> and <b>Bronze</b> medals on <em>International Chemistry Olympiads</em> in Washington DC and Moscow</li>
-                            <li>Twice <b>1<sup>st</sup> place</b>, once <b>2<sup>nd</sup> place</b> on <em>National Chemistry Competition</em></li>
-                            <li><b>2<sup>nd</sup> place</b> on <em>National Programming Competition</em></li>
-                            <li><b>1<sup>st</sup></b> and <b>2<sup>nd</sup> place</b> on <em>National History Competition</em></li>
-                            <li>Twice an <b>Honorable mention</b> on <em>National Mathematics Competition</em></li>
-                        </ul>
-                    </article>
-                </div>
-                <div class = "item-group active">
-                    <aside>
-                        2013&ndash;
-                    </aside>
-                    <header class = "group-info">
-                        <img src = "./img/32/university-32.png"/>
-                        <p>Is a student of Computer Science at <br/><b>FER Zagreb</b></p>
-                    </header>
-                    <article class = "group-extra">
-                        <h4>Achievements</h4>
-                        <ul>
-                            <li><em>Josip Lončar faculty council award</em> for excellent students</li>
-                        </ul>
-                    </article>
-                </div>
-            </div>
-            <div class = "further">
-                 <p>For a more thorough info, you can read <a href = "">my CV.</a></p>
-            </div>
+    <nav class="c-primary-nav">
+        <ul>
+            <li class="c-primary-nav__item o-emph-text is-active" id="home_link"><a href="#home_section">Home</a></li>
+            <li class="c-primary-nav__item o-emph-text" id="projects_link"><a href="#projects_section">Projects</a></li>
+            <li class="c-primary-nav__item o-emph-text" id="about_link"><a href="#about_section">About</a></li>
+            <li class="c-primary-nav__item o-emph-text" id="contacts_link"><a href="#contacts_section">Contacts</a></li>
+        </ul>
+    </nav>
+    <div class="o-site-section c-heading-section" id="home_section">
+        <div class="o-grid-container o-site-section-container">
+            <h2 class="c-heading-section__text">
+                A <span class="o-stand-out-one">Computer Engineering</span> student at <span class="o-stand-out-one">FER Zagreb</span>,
+                interested in <span class="o-stand-out-two">Programming</span>,
+                <span class="o-stand-out-two">Web</span> and <span class="o-stand-out-two">Software Development</span>,
+                but also <span class="o-stand-out-three">Mathematics</span>
+                and <span class="o-stand-out-three">Science</span>,
+                and quite good at all that.
+                <br><br>
+                Also likes to <span class="o-stand-out-four">read</span>,
+                <span class="o-stand-out-four">write</span>,
+                <span class="o-stand-out-four">think</span> and
+                <span class="o-stand-out-four">talk</span>,
+                as well as <span class="o-stand-out-four">run</span>,
+                <br>
+                <span class="o-stand-out-four">eat</span> and
+                <span class="o-stand-out-four">cook</span>.</h2>
         </div>
-    </section>
-
-    <section class = "page-section" id = "projects">
-        <div class = "content-wrapper">
-            <header class = "section-header">
-                <h2>Projects</h2>
-            </header>
-            <div class = "section-content">
-                <div class = "project-list">
-                    <article class = "project">
-                        <div class = "inproject">
-                            <div class = "project-content">
-                                <div class = "project-side">
-                                    <img src = "./img/notestack.png"/>
+    </div>
+    <div class="o-site-section c-projects-section" id="projects_section">
+        <div class="o-grid-container o-site-section-container">
+            <h1 class="o-site-section__title">Projects</h1>
+            <div class="o-site-section__content">
+                <div class="c-projects-list">
+                    <div class="c-project__wrapper">
+                        <div class="c-project">
+                            <div class="o-col-alpha o-col-1-4">
+                                <div class="c-project__logo">&#xE03E;</div>
+                            </div>
+                            <div class="o-col-beta o-col-3-4 c-project__body">
+                                <h3 class="c-project__name"><a href="http://fmpostaja.tk" class="o-stand-out-four">FMRadio</a></h3>
+                                <div class="c-project__descr">
+                                    <p><b>A web application for internet radio station management.</b><br>
+                                    Features online reproduction, program creation and management, management of available tracks, collection of feedback from listeners, gathering of statistical data.<br> <i>Made as a project for <b>Software Development</b> course at <b>FER</b>.</i>
+                                   </p>
                                 </div>
-                                <div class = "project-info">
-                                    <header class = "project-header">
-                                        <h3>NoteStack</h3>
-                                    </header>
-                                    <p class = "project-descr">An advanced note-taking web application
-                                        built with <b>Python Flask</b> and <b>AngularJS</b>.
-                                        Features organizing notes into categories and by tags, as well
-                                        as a simple markup language for rich content.</p>
-                                    <a href = "#" class = "project-link unoperational">View the app &ndash; not yet online</a>
-                                </div>
+                                <div class="c-project__reqs">Web, Python, Flask, TypeScript, Angular2, SASS</div>
                             </div>
                         </div>
-                    </article>
-                    <article class = "project">
-                        <div class = "inproject">
-                            <div class = "project-content">
-                                <div class = "project-side">
-                                    <img src = "./img/pljuska.png"/>
+                    </div>
+                    <div class="c-project__wrapper">
+                        <div class="c-project">
+                            <div class="o-col-alpha o-col-1-4">
+                                <div class="c-project__logo">&#xE322;</div>
+                            </div>
+                            <div class="o-col-beta o-col-3-4 c-project__body">
+                                <h3 class="c-project__name"><a href="https://github.com/zjurelinac/pyFrisc" class="o-stand-out-three">pyFrisc</a></h3>
+                                <div class="c-project__descr">
+                                    <p><b>An IDE for FRISC assembly programming and simulation.</b><br>
+                                    Features a basic text editor, inbuilt FRISC assembler and full-featured execution simulator with debugging &ndash; supports breakpoints, step-by-step execution, register and memory state monitoring... All that with a beautiful and usable UI.</p>
                                 </div>
-                                <div class = "project-info">
-                                    <header class = "project-header">
-                                        <h3>Pljuska</h3>
-                                    </header>
-                                    <p class = "project-descr">
-                                        A command-line interpreter for a custom Hash scripting language,
-                                        written entirely in <b>Haskell</b>. Developed as a project for a <b>Programming
-                                        in Haskell</b> course on FER Zagreb.
+                                <div class="c-project__reqs">Desktop, Python, Gtk+</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-project__wrapper">
+                        <div class="c-project">
+                            <div class="o-col-alpha o-col-1-4">
+                                <div class="c-project__logo">&#xE869;</div>
+                            </div>
+                            <div class="o-col-beta o-col-3-4 c-project__body">
+                                <h3 class="c-project__name"><a href="https://github.com/PPJ-Grupa/PPJ" class="o-stand-out-one">ppjC Compiler</a></h3>
+                                <div class="c-project__descr">
+                                    <p><b>A standalone C-subset compiler for FRISC processors.</b><br>
+                                    Compiles a subset of C programming language, including almost all basic language constructs: ifs, loops, functions, arrays, scopes etc., to FRISC assembly language, ready for execution. <br>
+                                    <i>Made as a project for <b>Compiler Design</b> course at <b>FER</b>.</i></p>
+                                </div>
+                                <div class="c-project__reqs">Algorithms, Python, Assembler</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-project__wrapper">
+                        <div class="c-project">
+                            <div class="o-col-alpha o-col-1-4">
+                                <div class="c-project__logo">&#xE86F;</div>
+                            </div>
+                            <div class="o-col-beta o-col-3-4 c-project__body">
+                                <h3 class="c-project__name"><a href="http://zjurelinac.github.io/Pljuska/" class="o-stand-out-two">Pljuska</a></h3>
+                                <div class="c-project__descr">
+                                    <p><b>A custom scripting language and it's console interpreter.</b><br>
+                                    Simple, expressive and fast, with a familiar, BASH-like syntax, only further improved.
+                                    Runs on a lightweight interpreter written in Haskell, and therefore is available for many platforms.<br>
+                                    <i>Made as a project for <b>Programming in Haskell</b> course at <b>FER</b>.</i></p>
+                                </div>
+                                <div class="c-project__reqs">Console, Haskell</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-project__wrapper">
+                        <div class="c-project">
+                            <div class="o-col-alpha o-col-1-4">
+                                <div class="c-project__logo">&#xE157;</div>
+                            </div>
+                            <div class="o-col-beta o-col-3-4 c-project__body">
+                                <h3 class="c-project__name"><a href="http://linker-pyhost.rhcloud.com" class="o-stand-out-five">Linker</a></h3>
+                                <div class="c-project__descr">
+                                    <p><b>A simple web application for organizing and sharing links.</b><br>
+                                    Features saving interesting links with their short descriptions, organizing them into groups, group-based sharing with other users, and some other useful things. Enables easy, browser-independent link management.</p>
+                                </div>
+                                <div class="c-project__reqs">Web, Python, Flask, JavaScript, AngularJS, LESS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="c-project__wrapper">
+                        <div class="c-project">
+                            <div class="o-col-alpha o-col-1-4">
+                                <div class="c-project__logo">&#xE3F7;</div>
+                            </div>
+                            <div class="o-col-beta o-col-3-4 c-project__body">
+                                <h3 class="c-project__name"><a href="" class="o-stand-out-four">Deva</a></h3>
+                                <div class="c-project__descr">
+                                    <p><b>A web application for solving mathematical problems.</b><br>
+                                    Features creation of open and closed contests, online solving of numerical problems, organization of problems into problemsets, management of test cases, scores and contestants.<br>
+                                    <i>Intended primarily for support of <b>Discont Math 1</b> course at <b>FER</b>.</i>
                                     </p>
-                                    <a href = "http://zjurelinac.github.com/Pljuska" class = "project-link">Project page</a>
                                 </div>
+                                <div class="c-project__reqs">Web, Python, Flask</div>
                             </div>
                         </div>
-                    </article>
-                    <article class = "project">
-                        <div class = "inproject">
-                            <div class = "project-content">
-                                <div class = "project-side">
-                                    <img src = "./img/grupakemija.png"/>
+                    </div>
+                    <div class="c-project__wrapper">
+                        <div class="c-project">
+                            <div class="o-col-alpha o-col-1-4">
+                                <div class="c-project__logo">&#xE53B;</div>
+                            </div>
+                            <div class="o-col-beta o-col-3-4 c-project__body">
+                                <h3 class="c-project__name"><a href="" class="o-stand-out-three">NoteStack</a></h3>
+                                <div class="c-project__descr">
+                                    <p><b>A web application for advanced note taking and organization.</b><br>
+                                    Features rich note contents, including lists, images, formulas and source code using custom markup language, category- based organization, note tagging and searching...<br>
+                                    <i>Still in development.</i></p>
                                 </div>
-                                <div class = "project-info">
-                                    <header class = "project-header">
-                                        <h3>Grupa Kemija</h3>
-                                    </header>
-                                    <p class = "project-descr">
-                                    A web site for chemistry group in my highschool &ndash; <b>XV. Gimnazija</b>, featuring custom
-                                    content management system and Q&amp;A, written in <b>PHP</b> framework <b>CodeIgniter</b> and
-                                        <b>jQuery</b>.
-                                    </p>
-                                    <a href = "http://kemija.tk" class = "project-link">Link to website</a>
-                                </div>
+                                <div class="c-project__reqs">Web, Python, Flask, TypeScript, Angular2</div>
                             </div>
                         </div>
-                    </article>
-                    <article class = "project">
-                        <div class = "inproject">
-                            <div class = "project-content">
-                                <div class = "project-side">
-                                    <img src = "./img/poly.png"/>
-                                </div>
-                                <div class = "project-info">
-                                    <header class = "project-header">
-                                        <h3>Poly</h3>
-                                    </header>
-                                    <p class = "project-descr">A <b>C++ library</b> which extends the language
-                                    with the capability of representing and calulating with polynomials.
-                                    Includes basic arithmetic operations, differentiation, factorization
-                                    and root finding algorithms.</p>
-                                    <a href = "https://github.com/zjurelinac/Poly" class = "project-link">Github repo</a>
-                                </div>
+                    </div>
+                    <div class="c-project__wrapper">
+                        <div class="c-project">
+                            <div class="o-col-alpha o-col-1-4">
+                                <div class="c-project__logo">&#xE922;</div>
                             </div>
-                        </div>
-                    </article>
-                    <article class = "project">
-                        <div class = "inproject">
-                            <div class = "project-content">
-                                <div class = "project-side">
-                                    <img src = "./img/linker.png"/>
+                            <div class="o-col-beta o-col-3-4 c-project__body">
+                                <h3 class="c-project__name"><a href="https://github.com/zjurelinac/Poly" class="o-stand-out-one">Poly</a></h3>
+                                <div class="c-project__descr">
+                                    <p><b>A standalone C++ math library for polynomials.</b><br>
+                                    Contains a polynomial representation with implementations of all basic polynomial operations, as well as taking derivatives, finding real roots and polynomial factorizations.<br>
+                                    <i>Created for solving a project from <b>Discont Math 2</b> course at <b>FER</b>.</i></p>
                                 </div>
-                                <div class = "project-info">
-                                    <header class = "project-header">
-                                        <h3>Linker</h3>
-                                    </header>
-                                    <p class = "project-descr">A <b>Python</b> web app for group sharing of links.
-                                    Written in <b>Flask</b> and <b>AngularJS</b>, it enables people to easily share
-                                    links with their friends and coworkers.</p>
-                                    <a href = "http://linkerapp.tk" class = "project-link">Web app</a>
-                                </div>
+                                <div class="c-project__reqs">Library, C++</div>
                             </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class = "page-section" id = "interests">
-        <div class = "content-wrapper">
-            <header class = "section-header">
-                <h2>Interests</h2>
-            </header>
-            <div class = "inside-grid">
-                <div class = "inside-col">
-                    <div class = "interest">
-                        <h3>Algorithmic programming</h3>
-                        <p>Solving problems is fun. The more thinking it requires, the more gratifiying
-                        it is to find the solution. And the best solutions are often the most elegant ones.
-                        I also like the competitive spirit of the programming contests I took part in,
-                        mostly the thrill of racing against time to solve as much as possible.</p>
-                        <div class = "image-grid">
-                            <div class = "image-wrapper"><img src = "./img/icons/cpp-128.png" alt = "" class = ""/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/sort-128.png" alt = "" class = ""/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/mind_map-128.png" alt = "" class = ""/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/polygon-128.png" alt = "" class = ""/></div>
-                        </div>
-                    </div>
-                </div>
-                <div class = "inside-col">
-                    <div class = "interest">
-                        <h3>Web apps and design</h3>
-                        <p>I like making new things, preferably useful ones. And designing web applications is just that.
-                        The simplicity of turning creative ideas into finished products, provided by Python and Javascript
-                        (AngularJS), is awesome. Designing them to look nice is also something I like doing myself.</p>
-                        <div class = "image-grid">
-                            <div class = "image-wrapper"><img src = "./img/logos/html.png" alt = "" class = "larger"/></div>
-                            <div class = "image-wrapper"><img src = "./img/logos/css.png" alt = "" class = "larger"/></div>
-                            <div class = "image-wrapper"><img src = "./img/logos/angularjs.png" alt = "" class = "larger"/></div>
-                            <div class = "image-wrapper"><img src = "./img/logos/python.png" alt = "" class = "larger"/></div>
-                        </div>
-                    </div>
-                </div>
-                <div class = "inside-col">
-                    <div class = "interest">
-                        <h3>Computer engineering</h3>
-                        <p>Finding out how things work was always a hobby of mine, and the more complex something is,
-                        the more fun you get by discovering it's inner workings. That's why I spend some of my free time learning about
-                        things like digital logic, processors, networks and operating systems.</p>
-                        <div class = "image-grid">
-                            <div class = "image-wrapper"><img src = "./img/icons/capacitor-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/integrated_circuit-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/ssd-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/globe-128.png" alt = "" class = "interest-item"/></div>
-                        </div>
-                    </div>
-                </div>
-                <div class = "inside-col">
-                    <div class = "interest">
-                        <h3>Mathematics</h3>
-                        <p>I love math because it's so simple. Not in a sense that it's trivial or easy to
-                        learn, but because so many incredibly complex and remarkable ideas can so easily
-                        be expressed and understood in the language of mathematics. And because expressed that
-                        way those ideas seem so natural.</p>
-                        <div class = "image-grid">
-                            <div class = "image-wrapper"><img src = "./img/icons/math-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/geometry-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/trigonometry-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/line_chart-128.png" alt = "" class = "interest-item"/></div>
-                        </div>
-                    </div>
-                </div>
-                <div class = "inside-col">
-                    <div class = "interest">
-                        <h3>Science</h3>
-                        <p>Understanding the world we live in is a desire every man feels deep inside. It's what drives
-                        our curiosity, and it's the reason we do science. I'm interested in every activity, from physics and
-                        chemistry to medicine and economics, that has a goal of extending the boundaries of human knowledge.</p>
-                        <div class = "image-grid">
-                            <div class = "image-wrapper"><img src = "./img/icons/physics-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/test_tube-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/dna_helix-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/geography-128.png" alt = "" class = "interest-item"/></div>
-                        </div>
-                    </div>
-                </div>
-                <div class = "inside-col">
-                    <div class = "interest">
-                        <h3>History</h3>
-                        <p>I love reading about the times past, all the things that happened a long time ago.
-                        Stories of large battles, old castles, great men and common people are parts of our own past,
-                        reminding us of how far we've come, what we've went through, and all we've gained and lost.
-                        </p>
-                        <div class = "image-grid">
-                            <div class = "image-wrapper"><img src = "./img/icons/pyramids-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/torii-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/viking_ship-128.png" alt = "" class = "interest-item"/></div>
-                            <div class = "image-wrapper"><img src = "./img/icons/cross-128.png" alt = "" class = "interest-item"/></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <section class = "page-section" id = "contact">
-        <div class = "content-wrapper">
-             <header class = "section-header">
-                <h2>Contact</h2>
-            </header>
-            <div class = "contact-grid">
-                <div class = "contact-item small-item">
-                    <a href = "https://facebook.com/zvonimir.jurelinac">
-                        <div class = "contact-inside facebook-item">
-                            <img src = "./img/large/facebook.png"/>
+    </div>
+    <div class="o-site-section c-about-section" id="about_section">
+        <div class="o-grid-container o-site-section-container">
+            <h1 class="o-site-section__title">About me</h1>
+            <div class="o-site-section__content o-grid-container">
+                <div class="o-col-alpha o-col-2-3 c-personal-info">
+                    <div class="o-box o-content-box c-basic">
+                        <p>A <b class="o-stand-out-four">third year BSc</b> student of <b class="o-stand-out-four">Computer Engineering</b> at <b class="o-stand-out-one">FER, University of Zagreb (Croatia).</b>
+                        Interested in <b class="o-stand-out-three">competitive programming</b>, <b class="o-stand-out-three">web</b> and <b class="o-stand-out-three">software development</b>, <b class="o-stand-out-three">math</b>, <b class="o-stand-out-three">science</b> and <b class="o-stand-out-three">technology</b>.
+                        Has experience in  <b class="o-stand-out-four">multiple programming projects</b>, both <b class="o-stand-out-four">personal</b> and <b class="o-stand-out-four">in teams</b>.
+                        Was awarded the <b class="o-stand-out-two">dean's award</b> for best students on the first two years of college.</p>
+                    </div>
+                    <div class="o-box o-content-box c-extra">
+                        <p>Aside from that, I also like to <b>read</b>, mostly novels, essays, history and philosophy, and have several times unsuccessfully attempted to <b>write</b> something myself :). But I don't give up easily, so I'll probably try again some time soon. I like shiny and beautiful things, and often try to make some of those &ndash; when designing a web page or an app, making a presentation or any other document.</p>
+                        <p>I have <b>good presentation skills</b>, and have had some experience in <b>teaching</b> and
+                        <b>explaining things</b> to others. I have also on several occasions been a <b>leader of teams</b> (from 3 to 7 people), and was probably not that bad at it.</p>
+                        <p>My knowledge of <b>English</b> is rather good, though my accent not that much. I'm also occasionally learning <b>German</b> (in free time), and sometimes even <b>Latin</b>. I'd also like to learn <b>Italian</b> and <b>Spanish</b>, but it probably won't happen any time soon :).</p>
+                        <p class="o-dim-text">I'm currently attending the <i>Youth Leadership Academy</i>, and volunteering at the <i>Udruga Fokus</i>.</p>
+                        <div class="o-container c-skills">
+                            <p class="c-skills-caption">A small chart of my skills and programming knowledge:</p>
+                            <div class="o-col-1-2">
+                                <h5>Programming languages</h5>
+                                <ul class="c-skill-list">
+                                    <li class="c-skill-item o-stand-out-five">
+                                        <div class="c-skill-item__name">Python</div>
+                                        <div class="c-skill-item__bar is-bar-100"></div>
+                                    </li>
+                                    <li class="c-skill-item o-stand-out-five">
+                                        <div class="c-skill-item__name">C++</div>
+                                        <div class="c-skill-item__bar is-bar-80"></div>
+                                    </li>
+                                    <li class="c-skill-item o-stand-out-five">
+                                        <div class="c-skill-item__name">C</div>
+                                        <div class="c-skill-item__bar is-bar-100"></div>
+                                    </li>
+                                    <li class="c-skill-item o-stand-out-five">
+                                        <div class="c-skill-item__name">Haskell</div>
+                                        <div class="c-skill-item__bar is-bar-70"></div>
+                                    </li>
+                                    <li class="c-skill-item o-stand-out-five">
+                                        <div class="c-skill-item__name">Java</div>
+                                        <div class="c-skill-item__bar is-bar-60"></div>
+                                    </li>
+                                    <li class="c-skill-item o-stand-out-five">
+                                        <div class="c-skill-item__name">JavaScript</div>
+                                        <div class="c-skill-item__bar is-bar-70"></div>
+                                    </li>
+                                    <li class="c-skill-item o-stand-out-five">
+                                        <div class="c-skill-item__name">PHP</div>
+                                        <div class="c-skill-item__bar is-bar-50"></div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="o-col-1-2">
+                                <h5>Web development</h5>
+                                <div class="c-skills-list">
+                                    <div class="c-skill-item o-stand-out-one">
+                                        <div class="c-skill-item__name">HTML</div>
+                                        <div class="c-skill-item__bar is-bar-100"></div>
+                                    </div>
+                                    <div class="c-skill-item o-stand-out-one">
+                                        <div class="c-skill-item__name">CSS/SASS/LESS</div>
+                                        <div class="c-skill-item__bar is-bar-100"></div>
+                                    </div>
+                                    <div class="c-skill-item o-stand-out-one">
+                                        <div class="c-skill-item__name">jQuery</div>
+                                        <div class="c-skill-item__bar is-bar-50"></div>
+                                    </div>
+                                    <div class="c-skill-item o-stand-out-one">
+                                        <div class="c-skill-item__name">Angular2</div>
+                                        <div class="c-skill-item__bar is-bar-60"></div>
+                                    </div>
+                                    <div class="c-skill-item o-stand-out-one">
+                                        <div class="c-skill-item__name">Flask</div>
+                                        <div class="c-skill-item__bar is-bar-90"></div>
+                                    </div>
+                                    <div class="c-skill-item o-stand-out-one">
+                                        <div class="c-skill-item__name">Django</div>
+                                        <div class="c-skill-item__bar is-bar-30"></div>
+                                    </div>
+                                    <div class="c-skill-item o-stand-out-one">
+                                        <div class="c-skill-item__name">CodeIgniter</div>
+                                        <div class="c-skill-item__bar is-bar-50"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="contact-item small-item">
-                    <a href = "">
-                        <div class = "contact-inside gplus-item">
-                            <img src = "./img/large/gplus.png"/>
+                <div class="o-col-beta o-col-1-3">
+                    <div class="o-box o-emph-box c-timeline">
+                        <div class="o-small-box c-timeline-box">
+                            <div class="o-col-alpha o-col-1-4">
+                                <div class="c-timeline-box__icon o-stand-out-four">&#xE84F;</div>
+                            </div>
+                            <div class="o-col-beta o-col-3-4">
+                                <h4 class="c-timeline-box__name o-stand-out-four">FER, University of Zagreb</h4>
+                                <div class="c-timeline-box__time">2013&ndash;</div>
+                                <ul class="c-timeline-box__items">
+                                    <li class = "c-timeline-box__item"><b>Computer Engineering</b></li>
+                                    <li class = "c-timeline-box__item">Third year BSc student</li>
+                                    <li class = "c-timeline-box__item"><b>180 ECTS</b> points earned</li>
+                                    <li class = "c-timeline-box__item">Average grade <b>A (5.0/5)</b></li>
+                                    <li class = "c-timeline-box__item"><b>&bdquo;Josip Lončar&rdquo; awards</b> for <br>1<sup>st</sup> and 2<sup>nd</sup> years of college</li>
+                                    <li class="c-timeline-box__item"><b>ACM CERC 2015</b> &ndash; 9<sup>th</sup> place</li>
+                                    <li class="c-timeline-box__item">City of Zagreb <b>scolarship</b><br> for best students</li>
+                                </ul>
+                            </div>
                         </div>
-                    </a>
-                </div>
-                <div class="contact-item small-item">
-                    <a href = "https://hr.linkedin.com/in/zjurelinac">
-                        <div class = "contact-inside linkedin-item">
-                            <img src = "./img/large/linkedin.png"/>
+                        <div class="o-small-box c-timeline-box">
+                            <div class="o-col-alpha o-col-1-4">
+                                <div class="c-timeline-box__icon o-stand-out-one">&#xE80C;</div>
+                            </div>
+                            <div class="o-col-beta o-col-3-4">
+                                <h4 class="c-timeline-box__name o-stand-out-one">XV. Gimnazija Zagreb</h4>
+                                <div class="c-timeline-box__time">2009&ndash;2013.</div>
+                                <ul class="c-timeline-box__items">
+                                    <li class="c-timeline-box__item">Average grade <b>A (5.0/5)</b></li>
+                                    <li class="c-timeline-box__item"><b>Silver</b> and <b>bronze</b> medals<br> on <b>IChO 2012</b> and <b>2013</b></li>
+                                    <li class="c-timeline-box__item">Many prizes at <b>national<br> competitions</b> in different<br> subjects</li>
+                                    <li class="c-timeline-box__item">City of Zagreb <b>scolarship</b><br> for best students</li>
+                                </ul>
+                            </div>
                         </div>
-                    </a>
-                </div>
-                <div class="contact-item small-item">
-                    <a href = "https://github.com/zjurelinac">
-                        <div class = "contact-inside github-item">
-                            <img src = "./img/large/github.png"/>
-                        </div>
-                    </a>
-                </div>
-                <div class = "contact-item">
-                    <div class = "contact-inside email-item">
-                        <img src = "./img/large/email.png"/>
-                        <div class = "contacts-list">
-                            <ul>
-                                <li>zvonimir.jurelinac@fer.hr</li>
-                                <li>zjurelinac@gmail.com</li>
-                            </ul>
+                        <div class="o-small-box c-timeline-box">
+                            <div class="o-col-alpha o-col-1-4">
+                                <div class="c-timeline-box__icon o-stand-out-three">&#xE7E9;</div>
+                            </div>
+                            <div class="o-col-beta o-col-3-4">
+                                <h4 class="c-timeline-box__name o-stand-out-three">Born in Zagreb, Croatia</h4>
+                                <div class="c-timeline-box__time">1994</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <footer class = "main-footer">
-        <div class = "content-wrapper">
-            <b>Hosted on Github pages.</b> Copyright &copy; 2014-2015
+    </div>
+    <div class="o-site-section c-contacts-section" id="contacts_section">
+        <div class="o-grid-container o-site-section-container">
+            <h1 class="o-site-section__title">Contacts</h1>
+            <div class="o-site-section__content o-grid-container">
+                <div class="o-col-1-3 c-contacts-box c-contacts-box--code">
+                    <div class="o-col-alpha o-col-1-4">
+                        <div class="c-contacts-box__icon o-stand-out-one">&#xE86F;</div>
+                    </div>
+                    <div class="o-col-beta o-col-3-4">
+                        <div class="o-smallest-box c-contact-item">
+                            <h5 class="c-contact-item__name o-stand-out-one">GitHub</h5>
+                            <a href="https://github.com/zjurelinac" class="c-contact-item__link">github.com/zjurelinac</a>
+                        </div>
+                        <div class="o-smallest-box c-contact-item">
+                            <h5 class="c-contact-item__name o-stand-out-one">BitBucket</h5>
+                            <a href="https://bitbucket.org/zjurelinac" class="c-contact-item__link">bitbucket.org/zjurelinac</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-col-1-3 c-contacts-box c-contacts-box--code">
+                    <div class="o-col-alpha o-col-1-4">
+                        <div class="c-contacts-box__icon o-stand-out-four">&#xE158;</div>
+                    </div>
+                    <div class="o-col-beta o-col-3-4">
+                        <div class="o-smallest-box c-contact-item">
+                            <h5 class="c-contact-item__name o-stand-out-four">Gmail</h5>
+                            <a href="" class="c-contact-item__link">zjurelinac@gmail.com</a>
+                        </div>
+                        <div class="o-smallest-box c-contact-item">
+                            <h5 class="c-contact-item__name o-stand-out-four">FER mail</h5>
+                            <a href="" class="c-contact-item__link">zvonimir.jurelinac@fer.hr</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-col-1-3 c-contacts-box c-contacts-box--social">
+                    <div class="o-col-alpha o-col-1-4">
+                        <div class="c-contacts-box__icon o-stand-out-two">&#xE80D;</div>
+                    </div>
+                    <div class="o-col-beta o-col-3-4">
+                        <div class="o-smallest-box c-contact-item">
+                            <h5 class="c-contact-item__name o-stand-out-two">Facebook</h5>
+                            <a href="https://www.facebook.com/zvonimir.jurelinac" class="c-contact-item__link">facebook.com/zvonimir.jurelinac</a>
+                        </div>
+                        <div class="o-small-box c-contact-item">
+                            <h5 class="c-contact-item__name o-stand-out-two">LinkedIn</h5>
+                            <span class="c-contact-item__link">Not yet available</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="o-col-1-3 c-contacts-box c-contacts-box--blog">
+                    <div class="o-col-alpha o-col-1-4">
+                        <div class="c-contacts-box__icon o-stand-out-three">&#xE8D2;</div>
+                    </div>
+                    <div class="o-col-beta o-col-3-4">
+                        <div class="o-smallest-box c-contact-item">
+                            <h5 class="c-contact-item__name o-stand-out-three">Blog</h5>
+                            <span class="c-contact-item__link">Not yet available</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </footer>
+    </div>
 </body>
 </html>

@@ -1,0 +1,411 @@
+@import "reset.css"
+
+//******************************************************************************
+//******************************   CONSTANTS   *********************************
+//******************************************************************************
+
+//  Color levels:
+//      Base - baseline value
+//      Primary - important element, should be focused on
+//      Secondary - not so important, doesn't ask for attention
+//      Tertiary - not important at all, barely visible
+//      Accent - grabs attention
+
+$base_text_color:       rgba( #fff, 0.9 )
+$primary_text_color:    #fff
+$secondary_text_color:  rgba( #fff, 0.7 )
+$tertiary_text_color:   rgba( #fff, 0.35 )
+
+$background_color:      #12131C
+
+$accent_blue_color:     #03A9F4
+$accent_red_color:      #F44336
+$accent_teal_color:     #009688
+$accent_lime_color:     #CDDC39
+$accent_indigo_color:   #3F51B5
+
+$serif_font:            "Domine", "PT Serif", "Georgia", serif
+$sans_font:             "Open Sans", "Verdana", sans
+
+$grid_width:            1200px
+
+//******************************************************************************
+//***********************   BASIC ELEMENT STYLES   *****************************
+//******************************************************************************
+
+article, div, img, li, nav, section
+    box-sizing:     border-box
+
+body
+    background:     $background_color
+    color:          $base_text_color
+    font-family:    $serif_font
+    font-size:      16px
+    line-height:    1.5rem
+
+h1, h2
+    color:          $primary_text_color
+    text-align:     center
+
+
+h1
+    border-bottom:  1px solid $tertiary_text_color
+    font-size:      2rem
+    line-height:    3rem
+    padding-bottom: 1rem
+    // margin:         0 auto
+    // width:          45%
+
+h2
+    font-size:      1.75rem
+    line-height:    2.5rem
+
+h3
+    color:          $primary_text_color
+    font-size:      1.5rem
+    line-height:    2.5rem
+    margin-bottom:  0.5rem
+
+h4
+    color:          $primary_text_color
+    font-size:      1.25rem
+    line-height:    2rem
+
+h5
+    font-family:    $sans_font
+    font-size:      1.25rem
+    font-weight:    300
+    line-height:    2rem
+
+b
+    color:          $primary_text_color
+    font-weight:    700
+
+i
+    font-style:     italic
+
+p
+    margin-bottom:  1rem
+
+sup
+    font-size:      0.75rem
+    line-height:    0
+    position:       relative
+    top:            -0.25rem
+
+a
+    color:          inherit
+    text-decoration:    none
+
+    &:hover
+        text-decoration: underline
+
+//******************************************************************************
+//********************************   MIXINS   **********************************
+//******************************************************************************
+
+=m-clearfix
+    &:after
+        content:        ""
+        display:        table
+        clear:          both
+
+//******************************************************************************
+//***************************   LAYOUT ELEMENTS   ******************************
+//******************************************************************************
+
+.c-primary-header
+    left:           0
+    padding:        2rem 3rem
+    position:       fixed
+    top:            0
+    width:          100%
+    z-index:        10
+
+.c-primary-nav
+    padding:        2rem 3rem
+    position:       fixed
+    right:          0
+    top:            0
+    z-index:        10
+
+.o-site-section
+    box-shadow:     inset 0 5rem 5rem -5rem rgba( #000, 0.75 )
+    min-height:     100vh
+    overflow:       hidden      // To prevent margins from exiting
+    width:          100%
+
+.o-site-section-container
+    margin:         6rem auto
+
+//******************************************************************************
+//****************************   GENERIC STYLES   ******************************
+//******************************************************************************
+
+.o-emph-text
+    font-family:    $sans_font
+    font-weight:    300
+    text-transform: uppercase
+
+.o-primary-text
+    color:          $primary_text_color
+
+.o-secondary-text
+    color:          $secondary_text_color
+
+.o-dim-text
+    color:          $tertiary_text_color
+
+.o-strong-colored
+    color:          inherit
+
+.o-stand-out-one
+    border-color:   $accent_red_color
+    color:          $accent_red_color
+
+.o-stand-out-two
+    border-color:   $accent_blue_color
+    color:          $accent_blue_color
+
+.o-stand-out-three
+    border-color:   $accent_teal_color
+    color:          $accent_teal_color
+
+.o-stand-out-four
+    border-color:   $accent_lime_color
+    color:          $accent_lime_color
+
+.o-stand-out-five
+    border-color:   $accent_indigo_color
+    color:          $accent_indigo_color
+
+.o-box
+    margin-bottom:  4rem
+
+.o-small-box
+    margin-bottom:  2rem
+
+.o-smallest-box
+    margin-bottom:  1rem
+
+/* Grid system */
+
+.o-grid-container
+    +m-clearfix
+    margin-left:    auto
+    margin-right:   auto
+    width:          $grid_width
+
+.o-col-alpha
+    float:          left
+
+.o-col-beta
+    float:          left
+
+.o-col-1-4, .o-col-1-2, .o-col-3-4, .o-col-1-3, .o-col-2-3
+    float:          left
+
+.o-col-1-4
+    width:          25%
+
+.o-col-1-2
+    width:          50%
+
+.o-col-3-4
+    width:          75%
+
+.o-col-1-3
+    width:          33%
+
+.o-col-2-3
+    width:          67%
+
+.o-container
+    +m-clearfix
+
+//******************************************************************************
+//****************************   SPECIFIC ITEMS   ******************************
+//******************************************************************************
+
+.c-heading-section
+    background:     url( ../img/bg.png )
+    padding:        15vh 0
+
+.c-heading-section__text
+    color:          $primary_text_color
+    margin:         0 auto
+    width:          75%
+
+.c-page-title
+    color:          $primary_text_color
+    font-size:      1.25rem
+    font-weight:    700
+    line-height:    2.5rem
+
+.c-primary-nav__item
+    color:          $tertiary_text_color
+    font-size:      0
+    line-height:    2.5rem
+    text-align:     right
+    text-shadow:    0 1px #000
+
+    &:first-letter, &.is-active
+        font-size:      1.25rem
+
+    &.is-active
+        color:          $primary_text_color
+        font-weight:    300
+
+    a:hover
+        color:          $accent_red_color
+
+    a
+        text-decoration: none
+
+/* Project list */
+
+.c-projects-list
+    margin-top:     2rem
+
+.c-project__wrapper
+    float:          left
+    padding:        2rem 3rem
+    width:          50%
+
+    &:nth-child(odd)
+        padding-left:   0
+
+    &:nth-child(even)
+        padding-right:  0
+
+.c-project
+    +m-clearfix
+    height:         13rem
+
+.c-project__logo
+    font-family:    "Material Icons"
+    font-size:      5rem
+    line-height:    5rem
+
+    .c-project__wrapper:nth-child(5n+1) &
+        color:          $accent_lime_color
+
+    .c-project__wrapper:nth-child(5n+2) &
+        color:          $accent_teal_color
+
+    .c-project__wrapper:nth-child(5n+3) &
+        color:          $accent_red_color
+
+    .c-project__wrapper:nth-child(5n+4) &
+        color:          $accent_blue_color
+
+    .c-project__wrapper:nth-child(5n) &
+        color:          $accent_indigo_color
+
+.c-project__descr
+    font-size:      0.85rem
+
+.c-project__reqs
+    @extend .o-emph-text
+    color:          $tertiary_text_color
+    font-size:      0.9rem
+
+/* About section */
+
+.c-personal-info
+    margin-top:     4rem
+    padding-right:  4rem
+
+.c-basic
+    font-size:      1.25rem
+    line-height:    2rem
+    text-align:     justify
+
+.c-extra
+    color:          $secondary_text_color
+    text-align:     justify
+
+.c-skills
+    margin-top:     3rem
+
+.c-skills-caption
+    font-size:      0.85rem
+    margin-bottom:  0.5rem
+
+.c-skills-list
+    overflow:       hidden
+    padding-right:  2rem
+    position:       relative
+
+.c-skill-item
+    margin:         1rem 0 -1.5rem 0
+    position:       relative
+
+.c-skill-item__name
+    color:          $primary_text_color
+    margin-left:    0.5rem
+    font-size:      0.9rem
+    font-weight:    bold
+    position:       relative
+    z-index:        2
+
+.c-skill-item__bar
+    border-bottom-width:    1.5rem
+    border-bottom-style:    solid
+    position:       relative
+    top:            -1.5rem
+    z-index:        1
+    width:          50%
+
+    @for $i from 1 through 10
+        &.is-bar-#{10*$i}
+            width:          9%*$i
+
+.c-timeline
+    font-size:      0.9rem
+    margin-top:     4rem
+
+.c-timeline-box
+    +m-clearfix
+
+.c-timeline-box__icon
+    font-family:    "Material Icons"
+    font-size:      3.5rem
+    line-height:    3.8rem
+
+.c-timeline-box__time
+    @extend .o-emph-text
+    color:          $tertiary_text_color
+    font-size:      1rem
+    font-weight:    300
+    margin-bottom:  0.5rem
+
+.c-timeline-box__items
+    color:          $secondary_text_color
+
+.c-timeline-box__item
+    list-style-type:    disc
+    margin-left:    1rem
+    padding:        0.125rem 0 0.125rem 0.5rem
+
+
+/* Contacts */
+
+.c-contacts-box
+    margin-top:     4rem
+
+.c-contacts-box__icon
+    font-family:    "Material Icons"
+    font-size:      3.5rem
+    line-height:    3.5rem
+    text-align:     center
+
+.c-contact-item
+    margin-left:    1rem
+
+.c-contact-item__link
+    color:          $tertiary_text_color
+    font-size:      0.9rem
+
+    &:hover
+        color:          $primary_text_color
